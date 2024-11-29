@@ -1,6 +1,9 @@
 ---
+
 - hosts: all
-  become: yes
+  gather_facts: false
+  connection: local
+  vars:
+    msg: 'hello'
   tasks:
-    - name: Become
-      command: id
+    - debug: var=msg
